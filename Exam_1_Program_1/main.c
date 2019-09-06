@@ -16,6 +16,7 @@
 	- Average
  */
 
+//test from VS Code
 
 #include <stdio.h>
 #include <math.h>

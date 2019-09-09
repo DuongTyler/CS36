@@ -1,6 +1,6 @@
 /*
  * Exam 1 Program 2
- * Written by: Tyler Duong
+ * Written by: Tyler Duong, Nikki Abedi
  * CS36 9/3/19
  * This program maintains information about a class of students
  *

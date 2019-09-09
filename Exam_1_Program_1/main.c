@@ -1,6 +1,6 @@
 /*
  * Exam 1 Program 1
- * Written by: Tyler Duong
+ * Written by: Tyler Duong, Nikki Abedi
  * CS36 9/3/19
  * This program does the following
  * INPUT:

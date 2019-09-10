@@ -74,10 +74,10 @@ int main()
 	
 	//print the output of everything
 	//%20s %6d %6d %6d %6d %10d %10d %14.2f
-	printf("\n        Name        |  H1  |  H2  |  H3  |  T1  |  T2  |  HTOTAL  |  TTOTAL  |  PERCENTAGE  \n");
+	printf("\n        Name        |  H1  |  H2  |  H3  |  T1  |  T2  |  HTOTAL  |  TTOTAL  | HAVG | TAVG |  PERCENTAGE  \n");
 	for (int i = 0; i < n_student; i++)
 	{
-		printf("%20s|%6d|%6d|%6d|%6d|%6d|%10d|%10d|%14.2f\n", students[i].name,
+		printf("%20s|%6d|%6d|%6d|%6d|%6d|%10d|%10d|%6.2f|%6.2f|%14.2f\n", students[i].name,
 				students[i].g_hmwk[0],	//hw 1
 				students[i].g_hmwk[1],	//hw 2
 				students[i].g_hmwk[2],	//hw 3
@@ -85,6 +85,8 @@ int main()
 				students[i].g_test[1],	//test 2
 				students[i].i_htotal,	//HTOTAL
 				students[i].i_ttotal,	//TTOTAL
+				(float)students[i].i_htotal/3,	//calculate the avg homework
+				(float)students[i].i_ttotal/2,	//calculate the avg test
 				students[i].d_gtotal	//PERCENTAGE
 				);
 	}
@@ -94,50 +96,4 @@ int main()
 
 
 /*
-======OUTPUT======
-
-$ ./a.out 
-Number of students are in the class: 5
-
-Enter student 1's name: Duong, Tyler   
-Enter homework score 1: 24
-Enter homework score 2: 22
-Enter homework score 3: 19
-Enter test score 1: 98
-Enter test score 2: 96
-
-Enter student 2's name: Schmoe, Joe  
-Enter homework score 1: 20
-Enter homework score 2: 19
-Enter homework score 3: 19
-Enter test score 1: 0
-Enter test score 2: 50
-
-Enter student 3's name: Torvalds, Linus 
-Enter homework score 1: 25
-Enter homework score 2: 25
-Enter homework score 3: 24
-Enter test score 1: 100
-Enter test score 2: 99
-
-Enter student 4's name: Stallman, Richard
-Enter homework score 1: 20
-Enter homework score 2: 25
-Enter homework score 3: 24
-Enter test score 1: 100
-Enter test score 2: 100
-
-Enter student 5's name: Jobs, Steve
-Enter homework score 1: 10
-Enter homework score 2: 5
-Enter homework score 3: 4
-Enter test score 1: 45
-Enter test score 2: 70
-
-        Name        |  H1  |  H2  |  H3  |  T1  |  T2  |  HTOTAL  |  TTOTAL  |  PERCENTAGE  
-        Duong, Tyler|    24|    22|    19|    98|    96|        65|       194|         92.87
-         Schmoe, Joe|    20|    19|    19|     0|    50|        58|        50|         45.93
-     Torvalds, Linus|    25|    25|    24|   100|    99|        74|       199|         99.17
-   Stallman, Richard|    20|    25|    24|   100|   100|        69|       200|         96.81
-         Jobs, Steve|    10|     5|     4|    45|    70|        19|       115|         44.64
-*/
+   */

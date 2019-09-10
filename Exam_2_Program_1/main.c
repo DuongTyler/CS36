@@ -1,6 +1,6 @@
 /*
  * Exam 2 Program 1
- * Written by: Tyler Duong
+ * Written by: Tyler Duong, Nikki Abedi
  * CS36 9/5/19
  * This program maintains information about a class of students and prints the letter grade
  *

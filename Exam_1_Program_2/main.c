@@ -96,4 +96,48 @@ int main()
 
 
 /*
-   */
+$ ./a.out 
+Number of students are in the class: 5
+
+Enter student 1's name: Trout, Albert
+Enter homework score 1: 18
+Enter homework score 2: 24
+Enter homework score 3: 20
+Enter test score 1: 76
+Enter test score 2: 88
+
+Enter student 2's name: Pujols, Mike 
+Enter homework score 1: 25
+Enter homework score 2: 25
+Enter homework score 3: 20
+Enter test score 1: 96
+Enter test score 2: 99
+
+Enter student 3's name: Ausmus, Mike
+Enter homework score 1: 15
+Enter homework score 2: 16
+Enter homework score 3: 20
+Enter test score 1: 58
+Enter test score 2: 75
+
+Enter student 4's name: Sciosia, Brad
+Enter homework score 1: 15
+Enter homework score 2: 14
+Enter homework score 3: 18
+Enter test score 1: 77
+Enter test score 2: 83
+
+Enter student 5's name: Student, Bad
+Enter homework score 1: 2
+Enter homework score 2: 2
+Enter homework score 3: 2
+Enter test score 1: 4
+Enter test score 2: 4
+
+        Name        |  H1  |  H2  |  H3  |  T1  |  T2  |  HTOTAL  |  TTOTAL  | HAVG | TAVG |  PERCENTAGE  
+       Trout, Albert|    18|    24|    20|    76|    88|        62|       164| 20.67| 82.00|         82.27
+        Pujols, Mike|    25|    25|    20|    96|    99|        70|       195| 23.33| 97.50|         95.84
+        Ausmus, Mike|    15|    16|    20|    58|    75|        51|       133| 17.00| 66.50|         67.10
+       Sciosia, Brad|    15|    14|    18|    77|    83|        47|       160| 15.67| 80.00|         73.07
+        Student, Bad|     2|     2|     2|     4|     4|         6|         8|  2.00|  4.00|          5.60
+*/

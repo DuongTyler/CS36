@@ -1,6 +1,6 @@
 /*
  * Exam 2 Program 1
- * Written by: Tyler Duong, Nikki Abedi
+ * Written by: Tyler Duong, Nikki Abedi, Jasmine Sourinthone
  * CS36 9/5/19
  * This program maintains information about a class of students and prints the letter grade
  *
@@ -9,6 +9,16 @@
 	- 3 Homework Grades	[0-25]		(40% of grade)
 	- 2 Exam Scores		[0-100]		(60% of grade)
  */
+
+
+	//VARIABLE NAME POLICY: first character of the datatype followed by an underscore, then an identifier for what the values name is
+	//EXCLUSION: You don't have to do this in iterators in for loops, or anywhere where it wouldn't make sense to
+	//example: A string for a name should be declared in the following manner:
+	//		char[20] s_name; 	(String name)
+	//		int i_age;		(Interger age)
+	//		float f_gpa;		(Float GPA)
+	//	This is so that we don't start accidentally casting, or not cast datatypes when performing calculations
+	//TODO:	RENAME variables to actually follow this policy, since I obviously didn't even follow my own policy when writing the code
 
 struct student
 {
@@ -100,6 +110,7 @@ int main()
 				students[i].d_gtotal,	//PERCENTAGE
 				c_grade_tmp		//Letter Grade
 				);
+		//add the total number of As, Bs, Cs, ect up
 		if (c_grade_tmp == 'A')		i_grades[0]++;
 		if (c_grade_tmp == 'B')		i_grades[1]++;
 		if (c_grade_tmp == 'C')		i_grades[2]++;
@@ -108,16 +119,14 @@ int main()
 	}
 	
 	for (int i = (int)'A'; i < (int)'A'+5; i++)	//loop through each letter grade (1 int value apart except for F)
-		if (i == 'A'+4)
-			printf("%c: %d\n", (char)(i+1), i_grades[i-'A']);	//print the Letter Grade followed by the number of those grades
-		else
-			printf("%c: %d\n", (char)(i), i_grades[i-'A']);
+		if (i == 'A'+4)		printf("%c: %d\n", (char)(i+1), i_grades[i-'A']);	//if i is iterating on character E, (E is the 4th character away from A) we print F instead
+		else			printf("%c: %d\n", (char)(i), i_grades[i-'A']);		//otherwise print each character grade and the score in the array of scores
 
 	free(students);		//free the students!!!
 	return 0;
 }
 
-
+//TODO: Redo the output of the code when all changes have been taken care of
 /*
 ======OUTPUT======
 $ ./a.out 

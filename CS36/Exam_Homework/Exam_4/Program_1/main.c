@@ -1,5 +1,5 @@
 /*
- * Exam 3 Program 2
+ * Exam 4 Program 1
  * Written by: Tyler Duong, Nikki Abedi, Jasmine Sourinthone
  * CS36 10/3/19
  * This program maintains information about a class of students and prints the letter grade
@@ -46,13 +46,25 @@ int getNumStudents()
         //get number of students
         printf("Number of students are in the class: ");
         scanf("%d", &ret);
-        while (getchar() != '\n');      //flush the input stream
+        while (getchar() != '\n');      //flush the input stream, intederministic, exit controlled
         return ret;
 }
 
-void loadStudent( struct student *students, int i_student )
+/*
+int i;
+for (i=0; i < 10; i++)
+{
+	printf("%d\n", i); //0 1 2 3 4 5 6 7 8 9
+}
+for (i=0; i < 10; ++i)	//i=10
+{
+	printf("%d\n", i); //1 2 3 4 5 6 7 8 9 10
+}*/
+
+void loadStudent( struct student *students, int i_student ) //i_student = 5
 {        //loop through each student
-        for (int i = 0; i < i_student; i++)
+        for (int i = 0; i < i_student; i++)//deterministic, entrance-controlled
+        // 
         {
                 //get name
                 printf("\nEnter student %d's name: ", (i+1));
@@ -62,22 +74,23 @@ void loadStudent( struct student *students, int i_student )
 
                 //get homework values
                 students[i].i_htotal = 0;
-                for (int a = 0; a < 3; a++)
+                for (int a = 0; a < 3; a++)	//deterministic, entrance-controlled
+								// assume students struct has been initialized
                 {
                         printf("Enter homework score %d: ", (a+1));
                         scanf("%d", &students[i].g_hmwk[a]);
                         students[i].i_htotal += students[i].g_hmwk[a];
-                        while (getchar() != '\n');
+                        while (getchar() != '\n');//intederministic, exit controlled
                 }
 
                 //get test values
                 students[i].i_ttotal = 0;
-                for (int a = 0; a < 2; a++)
+                for (int a = 0; a < 2; a++)//deterministic, entrance-controlled
                 {
                         printf("Enter test score %d: ", (a+1));
                         scanf("%d", &students[i].g_test[a]);
                         students[i].i_ttotal += students[i].g_test[a];
-                        while (getchar() != '\n');
+                        while (getchar() != '\n');//intederministic, exit controlled
                 }
 
                 students[i].f_gtotal =  (float)((students[i].i_htotal/1.875)
@@ -94,7 +107,7 @@ void printData(struct student *students, int i_student)
         printf("\n        Name        |  H1  |  H2  |  H3  |  T1  |  T2  |  HTOTAL  |  TTOTAL  |  PERCENTAGE  \n");
         float f_test1_total = 0;
         float f_test2_total = 0;
-        for (int i = 0; i < i_student; i++)
+        for (int i = 0; i < i_student; i++)//deterministic, entrance-controlled
         {
                 char c_grade_tmp = calcGrade(students[i].f_gtotal, i_grades);
                 printf("%20s|%6d|%6d|%6d|%6d|%6d|%10d|%10d|%14.2f% (%c)\n", students[i].name,
@@ -119,7 +132,7 @@ void printData(struct student *students, int i_student)
         printf("Test 1 Average: %.2f\n", t1_avg);
         printf("Test 2 Average: %0.2f\n", t2_avg);
 
-        for (int i = (int)'A'; i < (int)'A'+5; i++)     //loop through each letter grade (1 int value apart except for F)
+        for (int i = (int)'A'; i < (int)'A'+5; i++)     //loop through each letter grade (1 int value apart except for F) //deterministic, entrance-controlled
                 if (i == 'A'+4)         printf("%c: %d\n", (char)(i+1), i_grades[i-'A']);       //if i is iterating on character E, (E is the 4th character away from A) we print F instead
                 else                    printf("%c: %d\n", (char)(i), i_grades[i-'A']);         //otherwise print each character grade and the score in the array of scores
 

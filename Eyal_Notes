@@ -1,0 +1,13 @@
+Static;
+	Static functions are local to the file only and allow the compiler more freedom to optimize the code
+	Static variables are stored in data, not init each time function called
+
+Alignment:
+	Unions force align data
+	Alignment, can compare memory address lower bytes
+	memcpy does alignment check, memmove safer
+
+/util/src example sql api wrapper
+	create sql text commands in file
+
+bitap algorithm <-- string searching

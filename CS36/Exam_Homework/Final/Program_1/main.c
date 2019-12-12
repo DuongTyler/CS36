@@ -45,7 +45,7 @@ void actuallySwap(char *source, char *target, int size)
 	strncpy(target, tmp, size);
 }
 
-void sortNames(char arr[][STR_LEN])
+void sortNames(char arr[][STR_LEN]) //bubble sort
 {
         int i,j;
         for ( i=0; i<NUM_NAMES; i++ )
@@ -149,3 +149,53 @@ Found name at index 7
 
 Press ENTER or type command to continue
 */
+
+
+
+
+
+/*
+  
+    &x means the address of x
+    *x means the value stored in x if x is a pointer
+    
+    inputting numbers:
+    scanf("%d", &num);  //be careful of the newline still in the stream when getting a string
+    
+    getchar() will clear the newline
+    the fgets(str, len, stdin); //puts string length from standard input into string str
+    
+    MAN(UAL) PAGE DEFINITIONS:
+    char *fgets(char *s, int size, FILE *stream);
+    int sscanf(const char *str, const char *format, ...);
+    int fscanf(FILE *stream, const char *format, ...);  //gets text from a file
+    
+    For files:
+        must open w/ fopen();
+        FILE *fopen(const char *pathname, const char *mode)
+            valid modes are:
+                r - read only
+                w - write (overwrite)
+                rb - read binary
+                wb - write binary
+    READING TEXT:
+        char *fgets(char *s, int size, FILE *stream);
+            scan size characters into *s from the file pointer. FILE *stream can be the file pointer (or stdin)
+    WRITING TEXT:
+        int fprintf(FILE *stream, const char *format, ...);
+            works the same as printf, except you add the file pointer too. Remember files have newlines too, just like stdin
+    READING BINARY:
+        size_t fread(void *ptr, size_t size, size_t nmemb, FILE *stream);   //read a binary file
+            *ptr is the element you are storing what you read in
+            size is the size of the element you are reading
+            nmemb is the size of each individual element (sizeof(int) for an array of ints)
+            *stream is the file pointer
+    WRITING BINARY:
+        size_t fwrite(const void *ptr, size_t size, size_t nmemb, FILE *stream);    //write a bin file
+        
+    Don't forget to fclose(fp);
+    
+    
+    A recursive function is just a function that calls itself
+    bubble sort goes through each element and puts the min/max in the correct place as it goes
+ */

@@ -12,29 +12,29 @@
 
 void load(char arr[][STR_LEN])
 {
-        int i;
-        printf("Load the student names:\n");
-        for ( i=0; i<NUM_NAMES; i++ )
-        {
-                printf("%d) ",i+1);
-                fgets(arr[i], STR_LEN, stdin);
-                sscanf(arr[i], "%[^\n]", arr[i]);
-        }
+  int i;
+  printf("Load the student names:\n");
+  for ( i=0; i<NUM_NAMES; i++ )
+  {
+    printf("%d) ",i+1);
+    fgets(arr[i], STR_LEN, stdin);
+    sscanf(arr[i], "%[^\n]", arr[i]);
+  }
 }
 
 void print(char arr[][STR_LEN])
 {
-        int i;
-        for ( i=0; i<NUM_NAMES; i++ )
-                printf("%d) %s\n", i+1, arr[i]);
+  int i;
+  for ( i=0; i<NUM_NAMES; i++ )
+    printf("%d) %s\n", i+1, arr[i]);
 }
 
 void swap(void **p1, void **p2)
 {
-        void *tmp;
-        tmp = *p1;
-        *p1 = *p2;
-        *p2 = tmp;
+  void *tmp;
+  tmp = *p1;
+  *p1 = *p2;
+  *p2 = tmp;
 }
 
 void actuallySwap(char *source, char *target, int size)
@@ -47,15 +47,15 @@ void actuallySwap(char *source, char *target, int size)
 
 void sortNames(char arr[][STR_LEN]) //bubble sort
 {
-        int i,j;
-        for ( i=0; i<NUM_NAMES; i++ )
-        {
+  int i,j;
+  for ( i=0; i<NUM_NAMES; i++ )
+  {
 		for (j=i+1; j<NUM_NAMES; j++)
 		{
 			if ((strcmp(arr[i], arr[j])) > 0)
 			actuallySwap(arr[i], arr[j], STR_LEN);
 		}
-        }
+  }
 }
 
 int binsearch(char arr[][STR_LEN], int l, int r, char *target)	//why use binary search? it is faster and easy to implement
@@ -97,14 +97,14 @@ int main()
 int main()
 {
 	int s;
-        char names[NUM_NAMES][STR_LEN];
+  char names[NUM_NAMES][STR_LEN];
 	char target[STR_LEN];
-        load(names);
-        printf("\nUNSORTED:\n");
-        print(names);
+  load(names);
+  printf("\nUNSORTED:\n");
+  print(names);
 	sortNames(names);
-        printf("\nSORTED:\n");
-        print(names);
+  printf("\nSORTED:\n");
+  print(names);
 	printf("Search for a name: ");
 	fgets(target, STR_LEN, stdin);
 	sscanf(target, "%[^\n]", target);	//get rid of newline
@@ -112,7 +112,7 @@ int main()
 	if ( s >=0 )	printf("Found name at index %d\n", s);
 	else		printf("Not found\n");
 
-        return 0;
+  return 0;
 
 }
 

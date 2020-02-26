@@ -37,6 +37,27 @@
 //	menu handlers
 //	only works if functions have same signatures
 
+
+//cin.getline(void *var, int len)
+//infile.getline(void *var, int len)
+//cin.ignore(int max_char, '\n')
+
+//Exam 2:
+//	inline
+//	scoperes
+//	overload
+//	maxtemp
+//	arrtemp
+//	defargs
+//	funcptr1,2
+//	file 1,2,3
+
+//Exam 3:
+//	class1 - class10
+//	
+//
+
+
 float bad = 2.345;
 
 class Teacher
@@ -109,13 +130,13 @@ int main()
   //std::cin >> s;
   std::getline(std::cin, str2);
   std::cout << str2 << std::endl;
-  std::cout << std::showpoint() << std::fixed << std::setprecision(2);        //to 2 decimal places
+  std::cout << std::showpoint << std::fixed << std::cout.precision(2);        //to 2 decimal places
   std::cin.ignore(0,'\n');        //ignores up to 100 chars or up to the next newline
   std::cin >> str2;
   std::cout << str2 << std::endl;
 
   if (str2 == "test")  std::cout << "testing what?" << std::endl;
-  if (s == "test")  std::cout << "testing what?" << std::endl;
+  //if (s == "test")  std::cout << "testing what?" << std::endl;
 	try
   {
     if (1)  throw 2;
@@ -127,7 +148,7 @@ int main()
     std::cout << e << std::endl;
   }
 
-	std::ofstream of("data.txt", std::ios::out);
+	std::ofstream of("data.txt", std::ios::out);	//std::ios::binary, std::ios::in, std::ios::app
   int n;
   while (std::cin >> n && n != -1)
   {
@@ -135,7 +156,7 @@ int main()
   }
   of.close();
 
-  std::ifstream in("data.txt", std::ios::in);
+	std::ifstream in("data.txt", std::ios::in);
   while (in >> n)
   {
     std::cout << n << " ";
@@ -143,5 +164,31 @@ int main()
   std::cout << std::endl;
   in.close();
 
-	return 0;
+	//std::ifstream infile("data.txt", std::ios::in);
+	//while (infile.getline(name, 30))
+	//	std::cout << name << endl;
+	//infile.close();
+
+	//while (!infile.eof())	//or use end of file
+	//	infile.getline(name, 30)
+	//	cout << name << endl;
+	/*
+
+		int main()
+		{
+			std::ifstream in("infile.txt");
+			char name[20];
+			while (in.getline(name, 20))
+			{
+				int a, b, c;
+				in >> a >> b >> c;
+				in.ignore();
+				std::cout << name << "\n" << a << "\n"<< b << "\n"<< c << std::endl;
+			}
+			in.close();
+		}
+
+
+		 */
+		return 0;
 }
